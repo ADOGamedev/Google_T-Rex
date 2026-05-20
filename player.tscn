@@ -6,7 +6,7 @@
 [ext_resource path="res://assests/dinosaurio_shifted.png" type="Texture" id=4]
 [ext_resource path="res://assests/dinosaurio_dead.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.93814, 8.2743 )
 
 [sub_resource type="AtlasTexture" id=2]
@@ -84,21 +84,21 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource( 15 )
+shape = SubResource( 1 )
 
 [node name="running" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 2.0
 playing = true
 
 [node name="jumping" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="shift" type="AnimatedSprite" parent="."]
 frames = SubResource( 14 )
-frame = 3
 playing = true
 
 [node name="dead" type="Sprite" parent="."]

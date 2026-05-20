@@ -94,12 +94,12 @@ func _ready():
 
 func _on_Timer_timeout():
 	if get_node("player").restart == false:
-		print("Time " + str(timer.wait_time))
+
 		var random_timer = RandomNumberGenerator.new()
 		random_timer.randomize()
 		timer.wait_time = random_timer.randi_range(1, 3)
 	
-		print("Cactus " + str(cactus))
+
 		var random_cactus = RandomNumberGenerator.new()
 		random_cactus.randomize()
 		if points < 10:
@@ -107,7 +107,7 @@ func _on_Timer_timeout():
 		else:
 			cactus = random_cactus.randi_range(1, 5)
 	
-		print("Scale " + str(cactus_scale))
+
 		var random_scale = RandomNumberGenerator.new()
 		random_scale.randomize()
 		cactus_scale = random_scale.randi_range(1, 2)
@@ -177,7 +177,7 @@ func generate_cloud_instance():
 
 func _on_cloud_timer_timeout():
 	generate_cloud_instance()
-	print("Cloud " + str(cloud_timer.wait_time))
+
 	var random_cloud_timer = RandomNumberGenerator.new()
 	random_cloud_timer.randomize()
 	cloud_timer.wait_time = random_cloud_timer.randi_range(3, 6)

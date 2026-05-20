@@ -41,10 +41,12 @@ func get_input(delta):
 		get_tree().reload_current_scene()
 		
 	if position.x != 149:
-		
 		game_over()
+		
+	if restart:
+		return
 	
-	if is_on_floor() and restart == false:
+	if is_on_floor():
 		jumping = false
 		running = true
 		dead = false
