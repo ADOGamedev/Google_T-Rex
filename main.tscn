@@ -74,6 +74,7 @@ scale = Vector2( 6, 6 )
 [node name="cloud" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1200, 224 )
 scale = Vector2( 2, 2 )
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

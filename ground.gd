@@ -12,7 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var speed = get_parent().get_parent().speed
-	speed = get_parent().get_parent().speed
-	position.x -= speed
+
+	position.x -= speed * delta
 	if position.x < 0:
 		position.x = 1020

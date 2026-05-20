@@ -31,7 +31,7 @@ var cloud_array = []
 
 var cactus = 1
 var timer_out: bool
-var speed = 10
+var speed = 600
 var points = 0
 var cactus_scale = 2
 var bird_high = 320
@@ -42,7 +42,7 @@ func _physics_process(delta):
 	get_node("ui/points").text = "POINTS: " + str(points)
 		
 	for cactus_1 in cactus1_array:
-		cactus_1.position.x -= speed * delta * 60
+		cactus_1.position.x -= speed * delta
 		if cactus_1.position.x < -64:
 			points += 1
 			speed += 0.1
@@ -50,7 +50,7 @@ func _physics_process(delta):
 			cactus1_array.erase(cactus_1)
 				
 	for cactus_2 in cactus2_array:
-		cactus_2.position.x -= speed
+		cactus_2.position.x -= speed * delta
 		if cactus_2.position.x < -64:
 			points += 1
 			speed += 0.1
@@ -58,7 +58,7 @@ func _physics_process(delta):
 			cactus2_array.erase(cactus_2)
 			
 	for cactus_3 in cactus3_array:
-		cactus_3.position.x -= speed
+		cactus_3.position.x -= speed * delta
 		if cactus_3.position.x < -64:
 			points += 1
 			speed += 0.1
@@ -66,7 +66,7 @@ func _physics_process(delta):
 			cactus3_array.erase(cactus_3)
 		
 	for bird in bird_array:
-		bird.position.x -= speed
+		bird.position.x -= speed * delta
 		if bird.position.x < -64:
 			points += 1
 			speed += 0.1
@@ -75,7 +75,7 @@ func _physics_process(delta):
 	
 	for cloud in cloud_array:
 		cloud.playing = true
-		cloud.position.x -= speed/2
+		cloud.position.x -= speed/2 * delta
 		if cloud.position.x < -64:
 			cloud.queue_free()
 			cloud_array.erase(cloud)
